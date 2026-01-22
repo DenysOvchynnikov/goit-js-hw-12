@@ -32,14 +32,14 @@ inputSearch.addEventListener('input', validateInput);
 formData.addEventListener('submit', async ev => {
   ev.preventDefault();
 
+
   const searchQuery = inputSearch.value.trim();
 
-  if (searchQuery !== currentQuery) {
-    currentPage = 1;
-    totalHits = 0;
-    clearGallery();
-    hideLoadMoreButton();
-  }
+  // Скидання стану для кожного нового запиту
+  currentPage = 1;
+  totalHits = 0;
+  clearGallery();
+  hideLoadMoreButton();
   currentQuery = searchQuery;
 
   if (!validateInput()) {
